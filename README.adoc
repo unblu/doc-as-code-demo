@@ -1,0 +1,47 @@
+//tag::vardef[]
+:gh-repo-owner: unblu
+:gh-repo-name: doc-as-code-demo
+:project-name: Documentation as Code (Demo)
+:twitter-handle: j2r2b
+:license: https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+:license-name: Eclipse Public License - v 2.0
+
+:git-repository: {gh-repo-owner}/{gh-repo-name}
+:homepage: https://{gh-repo-owner}.github.io/{gh-repo-name}/
+:issues: https://github.com/{git-repository}/issues
+//end::vardef[]
+
+//tag::header[]
+= {project-name}
+:author: Jeremie Bresson
+:revnumber: {project-version}
+
+A demo setup for documentation as code with asciidoctor and gradle
+//end::header[]
+
+//tag::description[]
+== Description
+
+link:https://www.unblu.com/[Unblu inc.] is using documentation as code to publish its documentation.
+The setup is based on Asciidoctor, Gradle, Jenkins...
+
+This repository reproduces the setup but without any unblu specific content (lorem ipsum is used a lot to generate fake text).
+The goal is to provide as much inside as possible about the setup and about the tools.
+
+//end::description[]
+Read more on the link:{homepage}[project home page].
+
+//tag::contact-section[]
+== Get in touch
+
+Use the link:{issues}[issue tracker] on GitHub.
+
+You can also contact me on Twitter: link:https://twitter.com/{twitter-handle}[@{twitter-handle}]
+//end::contact-section[]
+
+//tag::license-section[]
+== License
+
+Code is under link:{license}[{license-name}].
+Documentation and slides are under the link:https://creativecommons.org/licenses/by-sa/4.0/[Creative Commons BY-SA 4.0]
+//end::license-section[]

@@ -1,0 +1,142 @@
+:github-readme: ../README.adoc
+
+include::{github-readme}[tags=vardef]
+
+:projectpage: https://github.com/{gh-repo-owner}/{gh-repo-name}
+
+include::{github-readme}[tags=header]
+
+== URLs
+
+* link:{homepage}[Project home] (this page)
+* link:{projectpage}[GitHub project]
+* link:{issues}[Issue tracker]
+
+TIP: Do you want to improve this page? Please git-link:self[edit it on GitHub, edit].
+
+include::{github-readme}[tags=description]
+
+In addition to this project page that explains the feature and concepts used for the "Documentation a code" setup, the output of this repository is also two guides:
+
+* <<lorem-ipsum-overview.adoc#, Lorem-Ipsum Overview Guide>>: a small guide that you would give to your users or customers.
+* <<lorem-ipsum-complete.adoc#, Lorem-Ipsum Complete Guide>>: a complete guide contains all the details. Typically used by the team working on the project.
+
+== Documentation features
+
+=== Asciidoctor
+
+There are many great presentations and articles that explain what is asciidoctor and why it is a good toolchain to implement "Documentation as Code".
+
+https://asciidoctor.org/
+
+==== Diagrams
+
+Working with diagram is a standard Asciidoctor feature.
+
+https://asciidoctor.org/docs/asciidoctor-diagram/
+
+==== Syntax Highlighting
+
+We currently support syntax highlighting for the following languages:
+
+    Apache, Bash, C#, C++, CSS, CoffeeScript, Diff, HTML, XML, HTTP, Ini, TOML, JSON, Java, JavaScript, Makefile, Markdown, Nginx, Objective-C, PHP, Perl, Properties, Python, Ruby, SQL, Shell, Kotlin, TypeScript
+
+If you want to add support for other languages, you can replace the bundle in `resource/highlight.min.js` with a new one from https://highlightjs.org/download/[highlightjs.org/download].
+
+See link:https://github.com/unblu/doc-as-code-demo/issues/1[Issue #1] for improvement in management of the `highlightjsdir` attribute.
+
+=== File structure
+
+* `docs/` all the documentation elements (article, images, ...)
+* `publish/` the final artifacts that will be published on GitHub pages. Those element reuse elements from the `docs/` folder.
+
+==== Elements in docs
+
+This folder contains the text and the images that will be included in the final documentation.
+
+The idea is to have multiple small pages corresponding to concepts or topics.
+This is really similar to how a wiki would work.
+Each of those pages can be read separatelly (as a standalone artifact).
+
+With the `-Pdocs` arguement it is possible to make gradle render the `docs/` folder insted of the `publish/` one.
+
+==== Elements in publish
+
+The final documents (the two guides in this example) consume elements from the `docs/` using the `include::` feature of asciidoctor.
+
+==== Initialization
+
+In order for the rendering or the preview of one separated file to work, some default configuration settings are put in `_init.adoc`.
+The idea is to include this init once (if not already included) by checking if the `init` attribute is set.
+At the end of the initialization phase, init is defined to `OK`.
+
+The idea is that for different context (creating a final guide for example) an other initialization values can be set.
+The guides (final document) are using `_init-guides.adoc` as an alternative to `_init.adoc`.
+
+For initialization values that are common to the different initialization startegies, the file `_common.adoc` is included.
+
+==== root attribute
+
+In order to be able to move text from one file to the next, the `{root}` attribute always points to the relative location of the `docs/` folder.
+It must be used when referencing other pages or images:
+
+[source,asciidoc]
+----
+image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]
+----
+
+== Build
+
+This project is using gradle.
+
+Command to build the documentation pages:
+
+----
+./gradlew asciidoctor
+----
+
+The output of this command is a collection HTML pages located at `<git repo root>/build/guides/html5/`.
+
+Command to build the documentation standalone elements (content of the `docs/` folder):
+
+----
+./gradlew asciidoctor -Pdocs
+----
+
+The output of this command is a collection HTML pages located at `<git repo root>/build/docs/html5/`.
+
+A tool like link:https://www.npmjs.com/package/live-server[live-server] (`npm install -g live-server`) can be used to have an auto-reloading browser.
+
+----
+live-server build/guides/html5/
+live-server build/docs/html5/
+----
+
+=== For project maintainers
+
+Command to upload the documentation page on GitHub pages:
+
+----
+./gradlew gitPublishPush
+----
+
+=== Using ssh-agent
+
+Some tasks requires to push into the distant git repository.
+
+If they are failing with errors like this:
+----
+org.eclipse.jgit.api.errors.TransportException: ... Permission denied (publickey).
+----
+
+Then `ssh-agent` can be used.
+----
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa
+----
+(link:https://superuser.com/a/990447/[source] for this approach)
+
+
+include::{github-readme}[tags=contact-section]
+
+include::{github-readme}[tags=license-section]

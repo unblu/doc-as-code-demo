@@ -1,0 +1,66 @@
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.10'
+    id 'org.ajoberstar.git-publish' version '2.0.0'
+}
+
+group = 'com.unblu.docs'
+
+static def buildDate() {
+    return new Date().format('yyyy-MM-dd')
+}
+
+wrapper {
+    gradleVersion = '5.0'
+}
+
+asciidoctorj {
+    version = '1.6.1'
+}
+
+def adocSources = project.hasProperty("docs") ? 'docs' : 'publish'
+def adocOutput = project.hasProperty("docs") ? 'build/docs' : 'build/guides'
+
+asciidoctor {
+    sourceDir = file(adocSources)
+    outputDir = file(adocOutput)
+    backends = ['html5']
+    requires = ['asciidoctor-diagram']
+    resources {
+        from('resources')
+    }
+    attributes = ['revdate'           : buildDate(),
+                  'project-version'   : "$version",
+                  'source-highlighter': 'highlightjs',
+                  'highlightjs-theme' : 'github-gist',
+                  'imagesdir'         : '',
+                  'toc'               : 'left',
+                  'toclevels'         : '4',
+                  'icons'             : 'font',
+                  'sectanchors'       : 'true',
+                  'idprefix'          : '',
+                  'idseparator'       : '-',
+                  'docinfo1'          : 'true']
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        asciidoctor 'org.asciidoctor:asciidoctorj-diagram:1.5.12'
+        asciidoctor 'fr.jmini.asciidoctorj:git-link:3.1.0'
+    }
+}
+
+gitPublish {
+    repoUri = 'git@github.com:' + "$githubRepositoryOwner" + '/' + "$githubRepositoryName" + '.git'
+    branch = 'gh-pages'
+
+    contents {
+        from "${file('build/guides/html5')}"
+    }
+
+    preserve {
+        include '.nojekyll'
+    }
+
+    commitMessage = "Update the 'gh-pages' branch."
+}

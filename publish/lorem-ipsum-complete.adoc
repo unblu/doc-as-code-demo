@@ -1,0 +1,13 @@
+:root: ../docs/
+include::_init-guide.adoc[]
+:isCompleteGuide: true
+
+= Lorem-Ipsum Complete Guide
+
+include::{root}big-picture.adoc[]
+
+== Components
+
+include::{root}concepts/lorem.adoc[leveloffset=1]
+
+include::{root}concepts/ipsum.adoc[leveloffset=1]
