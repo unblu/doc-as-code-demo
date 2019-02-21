@@ -1,11 +1,11 @@
 //references start
-:all-pages: <<{root}index.adoc#, All pages>>
-:big-picture: <<{root}big-picture.adoc#, Big picture>>
-:finibus-lorem: <<{root}concepts/lorem.adoc#, finibus lorem>>
-:ipsum: <<{root}concepts/ipsum.adoc#, Ipsum>>
-:_ipsum: <<{root}concepts/ipsum.adoc#, ipsum>>
-:lorem: <<{root}concepts/lorem.adoc#, Lorem>>
-:_lorem: <<{root}concepts/lorem.adoc#, lorem>>
+:all-pages: All pages
+:big-picture: Big picture
+:finibus-lorem: finibus lorem
+:ipsum: Ipsum
+:_ipsum: ipsum
+:lorem: Lorem
+:_lorem: lorem
 //references end
 
 //source highlighting:

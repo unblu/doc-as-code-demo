@@ -1,5 +1,5 @@
 :root: ../docs/
-include::_init-guide.adoc[]
+include::_init-overview-guide.adoc[]
 
 = Lorem-Ipsum Overview Guide
 

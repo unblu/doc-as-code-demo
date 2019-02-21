@@ -6,6 +6,8 @@ ifndef::init[]
 include::{root}_init.adoc[]
 endif::[]
 
+// ALIAS: ipsum
+
 //tag::description[]
 == Ipsum
 
@@ -45,7 +47,7 @@ Donec convallis quam non odio maximus, sed mollis lacus mollis.
 Sed vehicula auctor magna at dignissim.
 Donec quis urna et est placerat malesuada.
 Donec fringilla magna id orci vulputate, eget venenatis ex posuere.
-Quisque malesuada et mi non finibus.
+Quisque malesuada et mi non {finibus-lorem}.
 
 Curabitur in diam quam.
 Cras eu purus lorem.

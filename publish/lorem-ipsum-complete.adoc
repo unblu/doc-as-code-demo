@@ -1,5 +1,5 @@
 :root: ../docs/
-include::_init-guide.adoc[]
+include::_init-complete-guide.adoc[]
 :isCompleteGuide: true
 
 = Lorem-Ipsum Complete Guide

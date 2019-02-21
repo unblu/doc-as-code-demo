@@ -1,6 +1,12 @@
+//references start
+:all-pages: All pages
 :big-picture: <<Big Picture>>
-:lorem: <<Lorem>>
-:ipsum: <<Ipsum>>
+:finibus-lorem: <<Lorem,finibus lorem>>
+:ipsum: <<Ipsum,Ipsum>>
+:_ipsum: <<Ipsum,ipsum>>
+:lorem: <<Lorem,Lorem>>
+:_lorem: <<Lorem,lorem>>
+//references end
 
 //source highlighting:
 :source-highlighter: highlightjs

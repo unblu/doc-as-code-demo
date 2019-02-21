@@ -2,14 +2,18 @@
 ifndef::root[]
 :root: ../
 endif::[]
+// init this page in case of standalone display:
 ifndef::init[]
 include::{root}_init.adoc[]
 endif::[]
 
+// ALIAS: lorem
+// ALIAS: finibus lorem
+
 == Lorem
 
 Lorem diam sed, efficitur massa.
-{ipsum} sed in risus rutrum.
+{Ipsum} sed in risus rutrum.
 Sed lacinia finibus dui et lobortis.
 Pellentesque et enim.
 Etiam arcu odio, faucibus non eros nec, mattis tristique mauris.
@@ -26,7 +30,9 @@ Cras vitae consectetur turpis.
 
 image::{root}svg/lorem.svg[Lorem,300,opts=inline]
 
+ifdef::isCompleteGuide[]
 Phasellus lacinia pellentesque odio ac facilisis <<lst-lorem-json>>.
+endif::[]
 Phasellus aliquam ullamcorper ligula porttitor ullamcorper.
 Vestibulum lorem leo, mattis quis ligula eget, vulputate dignissim magna.
 

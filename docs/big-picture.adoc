@@ -20,4 +20,4 @@ Basic ditaa block:
  +---------+         \------------/
 ....
 
-{lorem} lacinia pellentesque odio ac facilisis {ipsum}.
+{lorem} lacinia pellentesque odio ac facilisis {_ipsum}.
