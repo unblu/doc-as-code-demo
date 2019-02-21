@@ -3,6 +3,8 @@
 include::{github-readme}[tags=vardef]
 
 :projectpage: https://github.com/{gh-repo-owner}/{gh-repo-name}
+:overview-guide: <<lorem-ipsum-overview.adoc#, Lorem-Ipsum Overview Guide>>
+:complete-guide: <<lorem-ipsum-complete.adoc#, Lorem-Ipsum Complete Guide>>
 
 include::{github-readme}[tags=header]
 
@@ -18,8 +20,8 @@ include::{github-readme}[tags=description]
 
 In addition to this project page that explains the feature and concepts used for the "Documentation a code" setup, the output of this repository is also two guides:
 
-* <<lorem-ipsum-overview.adoc#, Lorem-Ipsum Overview Guide>>: a small guide that you would give to your users or customers.
-* <<lorem-ipsum-complete.adoc#, Lorem-Ipsum Complete Guide>>: a complete guide contains all the details. Typically used by the team working on the project.
+* {overview-guide}: a small guide that you would give to your users or customers.
+* {complete-guide}: a complete guide contains all the details. Typically used by the team working on the project.
 
 == Documentation features
 
@@ -47,8 +49,8 @@ See link:https://github.com/unblu/doc-as-code-demo/issues/1[Issue #1] for improv
 
 === File structure
 
-* `docs/` all the documentation elements (article, images, ...)
-* `publish/` the final artifacts that will be published on GitHub pages. Those element reuse elements from the `docs/` folder.
+* git-link:docs/[`docs/`] all the documentation elements (article, images, ...)
+* git-link:publish/[`publish/`] the final artifacts that will be published on GitHub pages. Those element reuse elements from the git-link:docs/[`docs/`] folder.
 
 ==== Elements in docs
 
@@ -58,32 +60,64 @@ The idea is to have multiple small pages corresponding to concepts or topics.
 This is really similar to how a wiki would work.
 Each of those pages can be read separatelly (as a standalone artifact).
 
-With the `-Pdocs` arguement it is possible to make gradle render the `docs/` folder insted of the `publish/` one.
+With the `-Pdocs` arguement it is possible to make gradle render the git-link:docs/[`docs/`] folder insted of the git-link:publish/[`publish/`] one.
 
 ==== Elements in publish
 
-The final documents (the two guides in this example) consume elements from the `docs/` using the `include::` feature of asciidoctor.
+The final documents (the two guides in this example) consume elements from the git-link:docs/[`docs/`] using the `include::` feature of asciidoctor.
 
 ==== Initialization
 
-In order for the rendering or the preview of one separated file to work, some default configuration settings are put in `_init.adoc`.
+In order for the rendering or the preview of one separated file to work, some default configuration settings are put in git-link:docs/_init.adoc[`_init.adoc`].
 The idea is to include this init once (if not already included) by checking if the `init` attribute is set.
 At the end of the initialization phase, init is defined to `OK`.
 
 The idea is that for different context (creating a final guide for example) an other initialization values can be set.
-The guides (final document) are using `_init-guides.adoc` as an alternative to `_init.adoc`.
+The guides (final document) are using git-link:publish/_init-complete-guide.adoc[`_init-complete-guide.adoc`] or git-link:publish/_init-overview-guide.adoc[`_init-overview-guide.adoc`] as an alternative to git-link:docs/_init.adoc[`_init.adoc`]
 
-For initialization values that are common to the different initialization startegies, the file `_common.adoc` is included.
+For initialization values that are common to the different initialization strategies, the file  git-link:docs/_common.adoc[`_common.adoc`] is included.
 
 ==== root attribute
 
-In order to be able to move text from one file to the next, the `{root}` attribute always points to the relative location of the `docs/` folder.
+In order to be able to move text from one file to the next, the `{root}` attribute always points to the relative location of the git-link:docs/[`docs/`] folder.
 It must be used when referencing other pages or images:
 
 [source,asciidoc]
 ----
 image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]
 ----
+
+==== internal links
+
+Creating internal links directly between the pages of the git-link:docs/[`docs/`] folder is a bad practice.
+During creation of the guides (in the git-link:publish/[`publish/`] folder), we do not know if the section where the link points will be part of the final document or not.
+
+The idea is to use asciidoctor attributes instead of links.
+In the <<Initialization>> file, those attributes are defined as link or as text.
+
+Example:
+
+[source,asciidoc]
+.Definitions of the references in the init file
+----
+include::../docs/_init.adoc[tags=references]
+----
+
+There is a script to generate all references.
+`// ALIAS: <some text>` is used to indicate additional references that must be created.
+
+NOTE: TODO improve this section when the script is ready to be published (as gradle plugin for example).
+
+Usage, in your text, instead of having a link `+<<{root}concepts/lorem.adoc#, finibus lorem>>+` the attribute `+{finibus-lorem}+` must be used:
+
+[source,asciidoc]
+.Usage of a reference attribute to create an internal link
+----
+include::../docs/concepts/ipsum.adoc[tags=link-example]
+----
+
+For demonstration purpose, the {overview-guide} do not contains any links and the {complete-guide} does.
+
 
 == Build
 
@@ -97,7 +131,7 @@ Command to build the documentation pages:
 
 The output of this command is a collection HTML pages located at `<git repo root>/build/guides/html5/`.
 
-Command to build the documentation standalone elements (content of the `docs/` folder):
+Command to build the documentation standalone elements (content of the git-link:docs/[`docs/`] folder):
 
 ----
 ./gradlew asciidoctor -Pdocs
