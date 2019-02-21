@@ -1,3 +1,4 @@
+//tag::references[]
 //references start
 :all-pages: <<{root}index.adoc#, All pages>>
 :big-picture: <<{root}big-picture.adoc#, Big picture>>
@@ -7,6 +8,7 @@
 :lorem: <<{root}concepts/lorem.adoc#, Lorem>>
 :_lorem: <<{root}concepts/lorem.adoc#, lorem>>
 //references end
+//end::references[]
 
 //source highlighting:
 :source-highlighter: highlightjs

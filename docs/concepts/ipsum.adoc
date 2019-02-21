@@ -46,8 +46,10 @@ Morbi pretium quis lacus sed fermentum.
 Donec convallis quam non odio maximus, sed mollis lacus mollis.
 Sed vehicula auctor magna at dignissim.
 Donec quis urna et est placerat malesuada.
+//tag::link-example[]
 Donec fringilla magna id orci vulputate, eget venenatis ex posuere.
 Quisque malesuada et mi non {finibus-lorem}.
+//end::link-example[]
 
 Curabitur in diam quam.
 Cras eu purus lorem.
