@@ -5,8 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Jeremie Bresson">
-<title>doc-as-code-demo</title>
+<title>[INTERNAL] Lorem-Ipsum Complete Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -434,393 +433,172 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>doc-as-code-demo</h1>
-<div class="details">
-<span id="author" class="author">Jeremie Bresson</span><br>
-<span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2019-02-23</span>
-</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#urls">URLs</a></li>
-<li><a href="#description">Description</a></li>
-<li><a href="#documentation-features">Documentation features</a>
+<li><a href="#internal-lorem-ipsum-complete-guide">[INTERNAL] Lorem-Ipsum Complete Guide</a></li>
+<li><a href="#big-picture">Big picture</a></li>
+<li><a href="#components">Components</a>
 <ul class="sectlevel2">
-<li><a href="#asciidoctor">Asciidoctor</a>
-<ul class="sectlevel3">
-<li><a href="#diagrams">Diagrams</a></li>
-<li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
+<li><a href="#lorem">Lorem</a></li>
+<li><a href="#ipsum">Ipsum</a></li>
 </ul>
 </li>
-<li><a href="#file-structure">File structure</a>
-<ul class="sectlevel3">
-<li><a href="#elements-in-docs">Elements in docs</a></li>
-<li><a href="#elements-in-publish">Elements in publish</a></li>
-<li><a href="#initialization">Initialization</a></li>
-<li><a href="#root-attribute">root attribute</a></li>
-<li><a href="#imgs-attribute">imgs attribute</a></li>
-<li><a href="#internal-links">internal links</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#build">Build</a>
-<ul class="sectlevel2">
-<li><a href="#for-project-maintainers">For project maintainers</a></li>
-<li><a href="#using-ssh-agent">Using ssh-agent</a></li>
-</ul>
-</li>
-<li><a href="#get-in-touch">Get in touch</a></li>
-<li><a href="#license">License</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="internal-lorem-ipsum-complete-guide"><a class="anchor" href="#internal-lorem-ipsum-complete-guide"></a>[INTERNAL] Lorem-Ipsum Complete Guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A demo setup for documentation as code with asciidoctor and gradle</p>
+<p>This is an internal version.</p>
+</div>
+<div id="lst-internal-properties" class="listingblock">
+<div class="title">Listing 1. Internal IDs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">lorem.secret.key=47203475
+ipsum.secret.key=17729473</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="urls"><a class="anchor" href="#urls"></a>URLs</h2>
+<h2 id="big-picture"><a class="anchor" href="#big-picture"></a>Big picture</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://unblu.github.io/doc-as-code-demo/">Project home</a> (this page)</p>
-</li>
-<li>
-<p><a href="https://github.com/unblu/doc-as-code-demo">GitHub project</a></p>
-</li>
-<li>
-<p><a href="https://github.com/unblu/doc-as-code-demo/issues">Issue tracker</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Basic ditaa block:</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Do you want to improve this page? Please <a href="https://github.com/unblu/doc-as-code-demo/edit/master/publish/index.adoc">edit it on GitHub</a>.
-</td>
-</tr>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="diag-a8480d3c43df2e32f9aa4c6a0a910cb4.png" alt="diag a8480d3c43df2e32f9aa4c6a0a910cb4" width="390" height="126">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="#lorem">Lorem</a> lacinia pellentesque odio ac facilisis <a href="#ipsum">ipsum</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../html5/imgs/tiles/big-picture.png" alt="Big picture tiles">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://www.unblu.com/">Unblu inc.</a> is using documentation as code to publish its documentation.
-The setup is based on Asciidoctor, Gradle, Jenkins&#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>This repository reproduces the setup but without any unblu specific content (lorem ipsum is used a lot to generate fake text).
-The goal is to provide as much inside as possible about the setup and about the tools.</p>
-</div>
-<div class="paragraph">
-<p>In addition to this project page that explains the feature and concepts used for the "Documentation a code" setup, the output of this repository is also two guides:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="lorem-ipsum-overview.html">Lorem-Ipsum Overview Guide</a>: a small guide that you would give to your users or customers.</p>
-</li>
-<li>
-<p><a href="lorem-ipsum-complete.html">Lorem-Ipsum Complete Guide</a>: a complete guide that contains more details.</p>
-</li>
-<li>
-<p><a href="internal/lorem-ipsum-internal.html">Lorem-Ipsum Complete Guide (internal version)</a>: a specific version of the complete guide for the team working on the project (it contains some text that is only for the team).</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="documentation-features"><a class="anchor" href="#documentation-features"></a>Documentation features</h2>
+<h2 id="components"><a class="anchor" href="#components"></a>Components</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="asciidoctor"><a class="anchor" href="#asciidoctor"></a>Asciidoctor</h3>
+<h3 id="lorem"><a class="anchor" href="#lorem"></a>Lorem</h3>
 <div class="paragraph">
-<p>There are many great presentations and articles that explain what is asciidoctor and why it is a good toolchain to implement "Documentation as Code".</p>
-</div>
-<div class="paragraph">
-<p><a href="https://asciidoctor.org/" class="bare">https://asciidoctor.org/</a></p>
-</div>
-<div class="sect3">
-<h4 id="diagrams"><a class="anchor" href="#diagrams"></a>Diagrams</h4>
-<div class="paragraph">
-<p>Working with diagram is a standard Asciidoctor feature.</p>
+<p><strong>Internal Lorem Secret key</strong>: <code>47203475</code></p>
 </div>
 <div class="paragraph">
-<p><a href="https://asciidoctor.org/docs/asciidoctor-diagram/" class="bare">https://asciidoctor.org/docs/asciidoctor-diagram/</a></p>
+<p>Lorem diam sed, efficitur massa.
+<a href="#ipsum">Ipsum</a> sed in risus rutrum.
+Sed lacinia finibus dui et lobortis.
+Pellentesque et enim.
+Etiam arcu odio, faucibus non eros nec, mattis tristique mauris.
+Cras eget aliquet nibh.
+Curabitur in porta sem, maximus aliquet diam.
+Integer vitae augue eget ex viverra pharetra.
+In eu risus at diam lacinia dignissim.
+Duis vel mauris sed ex lobortis dictum.
+Nunc sagittis felis et turpis bibendum, id aliquam libero fermentum.
+Ut dolor nisi, congue nec lorem ac, commodo bibendum nunc.
+Nam ac felis elit.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sapien orci, luctus nec ligula nec, ornare hendrerit nunc.
+Cras vitae consectetur turpis.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="syntax-highlighting"><a class="anchor" href="#syntax-highlighting"></a>Syntax Highlighting</h4>
-<div class="paragraph">
-<p>We currently support syntax highlighting for the following languages:</p>
-</div>
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>Apache, Bash, C#, C++, CSS, CoffeeScript, Diff, HTML, XML, HTTP, Ini, TOML, JSON, Java, JavaScript, Makefile, Markdown, Nginx, Objective-C, PHP, Perl, Properties, Python, Ruby, SQL, Shell, Kotlin, TypeScript</pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px">
+  <rect x="50" y="20" rx="20" ry="20" width="120" height="120"
+  style="fill:#489FF8;stroke:#EFBC40;stroke-width:5;opacity:1" />
+</svg>
 </div>
 </div>
 <div class="paragraph">
-<p>If you want to add support for other languages, you can replace the bundle in <code>resource/highlight.min.js</code> with a new one from <a href="https://highlightjs.org/download/">highlightjs.org/download</a>.</p>
+<p>Phasellus aliquam ullamcorper ligula porttitor ullamcorper.
+Vestibulum lorem leo, mattis quis ligula eget, vulputate dignissim magna.</p>
 </div>
-<div class="paragraph">
-<p>See <a href="https://github.com/unblu/doc-as-code-demo/issues/1">Issue #1</a> for improvement in management of the <code>highlightjsdir</code> attribute.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../html5/imgs/tiles/lorem.png" alt="Lorem tiles">
+</div>
+</div>
+<div id="lst-lorem-json" class="listingblock">
+<div class="title">Listing 2. Lorem JSON example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "id": 364528,
+    "lorem": "lorem",
+    "data": ["9786e2c1", "c51147af", "81aa2d6d", "6a5a6b82"]
+}</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="file-structure"><a class="anchor" href="#file-structure"></a>File structure</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> all the documentation elements (article, images, &#8230;&#8203;)</p>
-</li>
-<li>
-<p><a href="https://github.com/unblu/doc-as-code-demo/tree/master/publish"><code>publish/</code></a> the final artifacts that will be published on GitHub pages. Those element reuse elements from the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> folder.</p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="elements-in-docs"><a class="anchor" href="#elements-in-docs"></a>Elements in docs</h4>
+<h3 id="ipsum"><a class="anchor" href="#ipsum"></a>Ipsum</h3>
 <div class="paragraph">
-<p>This folder contains the text and the images that will be included in the final documentation.</p>
+<p><strong>Internal Ipsum Secret key</strong>: <code>17729473</code></p>
 </div>
 <div class="paragraph">
-<p>The idea is to have multiple small pages corresponding to concepts or topics.
-This is really similar to how a wiki would work.
-Each of those pages can be read separatelly (as a standalone artifact).</p>
+<p>Ipsum sed in risus rutrum, commodo quam nec, viverra nulla.
+Curabitur porta tincidunt urna.
+Aenean pulvinar sapien ex, id ultrices lacus consectetur ac.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Praesent et euismod est.
+Integer eleifend ornare accumsan.
+Etiam non nulla ut urna suscipit bibendum sed sed urna.
+Aenean maximus dictum venenatis.
+Nullam ultrices lorem sed rutrum egestas.
+Duis id felis at ex congue venenatis at non turpis.
+Praesent quis molestie justo.
+Nam a elementum elit.
+Nunc vehicula fermentum euismod.
+Etiam fermentum et purus sed interdum.</p>
 </div>
-<div class="paragraph">
-<p>With the <code>-Pdocs</code> arguement it is possible to make gradle render the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> folder insted of the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/publish"><code>publish/</code></a> one.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="elements-in-publish"><a class="anchor" href="#elements-in-publish"></a>Elements in publish</h4>
-<div class="paragraph">
-<p>The final documents (the two guides in this example) consume elements from the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> using the <code>include::</code> feature of asciidoctor.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="initialization"><a class="anchor" href="#initialization"></a>Initialization</h4>
-<div class="paragraph">
-<p>In order for the rendering or the preview of one separated file to work, some default configuration settings are put in <a href="https://github.com/unblu/doc-as-code-demo/blob/master/docs/_init.adoc"><code>_init.adoc</code></a>.
-The idea is to include this init once (if not already included) by checking if the <code>init</code> attribute is set.
-At the end of the initialization phase, init is defined to <code>OK</code>.</p>
-</div>
-<div class="paragraph">
-<p>The idea is that for different context (creating a final guide for example) an other initialization values can be set.
-The guides (final document) are using <a href="https://github.com/unblu/doc-as-code-demo/blob/master/publish/_init-complete-guide.adoc"><code>_init-complete-guide.adoc</code></a> or <a href="https://github.com/unblu/doc-as-code-demo/blob/master/publish/_init-overview-guide.adoc"><code>_init-overview-guide.adoc</code></a> as an alternative to <a href="https://github.com/unblu/doc-as-code-demo/blob/master/docs/_init.adoc"><code>_init.adoc</code></a></p>
-</div>
-<div class="paragraph">
-<p>For initialization values that are common to the different initialization strategies, the file  <a href="https://github.com/unblu/doc-as-code-demo/blob/master/docs/_common.adoc"><code>_common.adoc</code></a> is included.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="root-attribute"><a class="anchor" href="#root-attribute"></a>root attribute</h4>
-<div class="paragraph">
-<p>In order to be able to move text from one file to the next, the <code>{root}</code> attribute always points to the relative location of the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> folder.</p>
-</div>
-<div class="paragraph">
-<p>It must be used for links (see <a href="#internal-links">internal links</a>).
-It must also be used for images that will be included in the final document like svg files:</p>
-</div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]</code></pre>
+<svg xmlns="http://www.w3.org/2000/svg"  width="300px">
+  <circle cx="50" cy="50" r="40" stroke="#EFBC40" stroke-width="4" fill="#81D553" />
+</svg>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="imgs-attribute"><a class="anchor" href="#imgs-attribute"></a>imgs attribute</h4>
-<div class="paragraph">
-<p>The <code>{imgs}</code> is similar to the <code>{root}</code> attribute for the <a href="https://github.com/unblu/doc-as-code-demo/blob/master/docs/imgs"><code>docs/imgs/</code></a> folder.
-Its value depends of the context:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>When previewing an adoc file (also called "standalone" display) (then it is <code>{root}/imgs</code>). This is also the case for the rendering made by GitHub.</p>
-</li>
-<li>
-<p>When generating the html output (the content of <code>docs</code> output folder using <code>-Pdocs</code> or the normal <code>guides</code> output folder), then its value depends of the location of the file (<code>docfile</code>) beeing processed, relative to <code>sourceDir</code>. This is because in the resulting html document, the <code>src</code> attribute of the <code>&lt;img&gt;</code> tag is not the one in the source folder <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> but a copy of the image that will be present in the output folder.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p>It must be used for images (<code>png</code>, <code>gif</code>, <code>jpeg</code> &#8230;&#8203;):</p>
+<p>Phasellus aliquam ullamcorper ligula porttitor ullamcorper.
+Vestibulum lorem leo, mattis quis ligula eget, vulputate dignissim magna.</p>
 </div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::{imgs}example.png[]</code></pre>
+<img src="../../html5/imgs/tiles/ipsum.png" alt="Ipsum tiles">
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="internal-links"><a class="anchor" href="#internal-links"></a>internal links</h4>
-<div class="paragraph">
-<p>Creating internal links directly between the pages of the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> folder is a bad practice.
-During creation of the guides (in the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/publish"><code>publish/</code></a> folder), we do not know if the section where the link points will be part of the final document or not.</p>
-</div>
-<div class="paragraph">
-<p>The idea is to use asciidoctor attributes instead of links.
-In the <a href="#initialization">Initialization</a> file, those attributes are defined as link or as text.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="title">Definitions of the references in the init file</div>
+<div id="lst-ipsum-json" class="listingblock">
+<div class="title">Listing 3. Ipsum properties example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">//references start
-:all-pages: &lt;&lt;{root}index.adoc#, All pages&gt;&gt;
-:big-picture: &lt;&lt;{root}big-picture.adoc#, Big picture&gt;&gt;
-:finibus-lorem: &lt;&lt;{root}concepts/lorem.adoc#, finibus lorem&gt;&gt;
-:ipsum: &lt;&lt;{root}concepts/ipsum.adoc#, Ipsum&gt;&gt;
-:_ipsum: &lt;&lt;{root}concepts/ipsum.adoc#, ipsum&gt;&gt;
-:lorem: &lt;&lt;{root}concepts/lorem.adoc#, Lorem&gt;&gt;
-:_lorem: &lt;&lt;{root}concepts/lorem.adoc#, lorem&gt;&gt;
-//references end</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">ipsum.enabled=true
+ipsum.name=ipsum
+ipsum.id=12598431</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>There is a script to generate all references.
-<code>// ALIAS: &lt;some text&gt;</code> is used to indicate additional references that must be created.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-TODO improve this section when the script is ready to be published (as gradle plugin for example).
-</td>
-</tr>
-</table>
+<p>Morbi pretium quis lacus sed fermentum.
+Donec convallis quam non odio maximus, sed mollis lacus mollis.
+Sed vehicula auctor magna at dignissim.
+Donec quis urna et est placerat malesuada.
+Donec fringilla magna id orci vulputate, eget venenatis ex posuere.
+Quisque malesuada et mi non <a href="#lorem">finibus lorem</a>.</p>
 </div>
 <div class="paragraph">
-<p>Usage, in your text, instead of having a link <code>&lt;&lt;{root}concepts/lorem.adoc#, finibus lorem&gt;&gt;</code> the attribute <code>{finibus-lorem}</code> must be used:</p>
+<p>Curabitur in diam quam.
+Cras eu purus lorem.
+Phasellus ut blandit ex.
+Morbi maximus eleifend enim, in venenatis enim auctor pharetra.
+Sed congue mollis tellus, id molestie libero dictum vitae.
+Aliquam erat volutpat.
+Quisque nec blandit nulla.</p>
 </div>
-<div class="listingblock">
-<div class="title">Usage of a reference attribute to create an internal link</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Donec fringilla magna id orci vulputate, eget venenatis ex posuere.
-Quisque malesuada et mi non {finibus-lorem}.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>For demonstration purpose, the <a href="lorem-ipsum-overview.html">Lorem-Ipsum Overview Guide</a> do not contains any links and the <a href="lorem-ipsum-complete.html">Lorem-Ipsum Complete Guide</a> does.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="build"><a class="anchor" href="#build"></a>Build</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This project is using gradle.</p>
-</div>
-<div class="paragraph">
-<p>Command to build the documentation pages:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>./gradlew asciidoctor</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The output of this command is a collection HTML pages located at <code>&lt;git repo root&gt;/build/guides/html5/</code>.</p>
-</div>
-<div class="paragraph">
-<p>Command to build the documentation standalone elements (content of the <a href="https://github.com/unblu/doc-as-code-demo/tree/master/docs"><code>docs/</code></a> folder):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>./gradlew asciidoctor -Pdocs</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The output of this command is a collection HTML pages located at <code>&lt;git repo root&gt;/build/docs/html5/</code>.</p>
-</div>
-<div class="paragraph">
-<p>A tool like <a href="https://www.npmjs.com/package/live-server">live-server</a> (<code>npm install -g live-server</code>) can be used to have an auto-reloading browser.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>live-server build/guides/html5/
-live-server build/docs/html5/</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="for-project-maintainers"><a class="anchor" href="#for-project-maintainers"></a>For project maintainers</h3>
-<div class="paragraph">
-<p>Command to upload the documentation page on GitHub pages:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>./gradlew gitPublishPush</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="using-ssh-agent"><a class="anchor" href="#using-ssh-agent"></a>Using ssh-agent</h3>
-<div class="paragraph">
-<p>Some tasks requires to push into the distant git repository.</p>
-</div>
-<div class="paragraph">
-<p>If they are failing with errors like this:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>org.eclipse.jgit.api.errors.TransportException: ... Permission denied (publickey).</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then <code>ssh-agent</code> can be used.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>eval `ssh-agent -s`
-ssh-add ~/.ssh/id_rsa</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>(<a href="https://superuser.com/a/990447/">source</a> for this approach)</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="get-in-touch"><a class="anchor" href="#get-in-touch"></a>Get in touch</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Use the <a href="https://github.com/unblu/doc-as-code-demo/issues">issue tracker</a> on GitHub.</p>
-</div>
-<div class="paragraph">
-<p>You can also contact me on Twitter: <a href="https://twitter.com/j2r2b">@j2r2b</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="license"><a class="anchor" href="#license"></a>License</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Code is under <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html">Eclipse Public License - v 2.0</a>.
-Documentation and slides are under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0</a></p>
 </div>
 </div>
 </div>
@@ -828,11 +606,11 @@ Documentation and slides are under the <a href="https://creativecommons.org/lice
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2019-02-23 15:08:38 +0100
+Last updated 2019-02-23 07:20:15 +0100
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github-gist.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<link rel="stylesheet" href="../../html5/highlight/styles/github-gist.min.css">
+<script src="../../html5/highlight/highlight.min.js"></script>
 <script>hljs.initHighlighting()</script>
 </body>
 </html>
