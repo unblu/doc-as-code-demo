@@ -8,11 +8,5 @@
 :_lorem: <<Lorem,lorem>>
 //references end
 
-//source highlighting:
-:source-highlighter: highlightjs
-:highlightjs-theme: github-gist
-:highlightjsdir: highlight
-//TODO: setting 'highlightjsdir' like this is an hack, it assumes that all guides are always top level (see https://github.com/unblu/doc-as-code-demo/issues/1)
-
-include::{root}_common.adoc[]
+include::../docs/_common.adoc[]
 :init: OK

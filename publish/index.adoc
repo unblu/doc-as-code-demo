@@ -5,6 +5,7 @@ include::{github-readme}[tags=vardef]
 :projectpage: https://github.com/{gh-repo-owner}/{gh-repo-name}
 :overview-guide: <<lorem-ipsum-overview.adoc#, Lorem-Ipsum Overview Guide>>
 :complete-guide: <<lorem-ipsum-complete.adoc#, Lorem-Ipsum Complete Guide>>
+:internal-guide: <<internal/lorem-ipsum-internal.adoc#, Lorem-Ipsum Complete Guide (internal version)>>
 
 include::{github-readme}[tags=header]
 
@@ -21,7 +22,8 @@ include::{github-readme}[tags=description]
 In addition to this project page that explains the feature and concepts used for the "Documentation a code" setup, the output of this repository is also two guides:
 
 * {overview-guide}: a small guide that you would give to your users or customers.
-* {complete-guide}: a complete guide contains all the details. Typically used by the team working on the project.
+* {complete-guide}: a complete guide that contains more details. 
+* {internal-guide}: a specific version of the complete guide for the team working on the project (it contains some text that is only for the team).
 
 == Documentation features
 
@@ -79,13 +81,32 @@ For initialization values that are common to the different initialization strate
 
 ==== root attribute
 
-In order to be able to move text from one file to the next, the `{root}` attribute always points to the relative location of the git-link:docs/[`docs/`] folder.
-It must be used when referencing other pages or images:
+In order to be able to move text from one file to the next, the `+{root}+` attribute always points to the relative location of the git-link:docs/[`docs/`] folder.
+
+It must be used for links (see <<internal links>>).
+It must also be used for images that will be included in the final document like svg files:
 
 [source,asciidoc]
 ----
 image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]
 ----
+
+
+==== imgs attribute
+
+The `{imgs}` is similar to the `{root}` attribute for the git-link:docs/imgs[`docs/imgs/`] folder.
+Its value depends of the context:
+
+* When previewing an adoc file (also called "standalone" display) (then it is `{root}/imgs`). This is also the case for the rendering made by GitHub.
+* When generating the html output (the content of `docs` output folder using `-Pdocs` or the normal `guides` output folder), then its value depends of the location of the file (`docfile`) beeing processed, relative to `sourceDir`. This is because in the resulting html document, the `src` attribute of the `<img>` tag is not the one in the source folder git-link:docs/[`docs/`] but a copy of the image that will be present in the output folder.
+
+It must be used for images (`png`, `gif`, `jpeg` ...):
+
+[source,asciidoc]
+----
+image::{imgs}example.png[]
+----
+
 
 ==== internal links
 

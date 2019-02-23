@@ -4,10 +4,12 @@ include::_init-complete-guide.adoc[]
 
 = Lorem-Ipsum Complete Guide
 
-include::{root}big-picture.adoc[]
+//tag::guide-content[]
+include::../docs/big-picture.adoc[]
 
 == Components
 
-include::{root}concepts/lorem.adoc[leveloffset=1]
+include::../docs/concepts/lorem.adoc[leveloffset=1]
 
-include::{root}concepts/ipsum.adoc[leveloffset=1]
+include::../docs/concepts/ipsum.adoc[leveloffset=1]
+//end::guide-content[]

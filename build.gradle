@@ -27,6 +27,9 @@ asciidoctor {
     requires = ['asciidoctor-diagram']
     resources {
         from('resources')
+        from('docs') {
+            include '**/*.png'
+        }
     }
     attributes = ['revdate'           : buildDate(),
                   'project-version'   : "$version",

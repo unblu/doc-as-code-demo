@@ -1,0 +1,17 @@
+:root: ../../docs/
+:isInternal: true
+include::../_init-complete-guide.adoc[]
+
+== [INTERNAL] Lorem-Ipsum Complete Guide
+
+This is an internal version.
+
+[[lst-internal-properties]]
+[source, properties]
+.Internal IDs
+----
+lorem.secret.key=47203475
+ipsum.secret.key=17729473
+----
+
+include::../lorem-ipsum-complete.adoc[tags=guide-content]

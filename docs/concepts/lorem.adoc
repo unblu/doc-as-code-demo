@@ -1,4 +1,4 @@
-// {root} shoud point to the `docs/` folder
+// {root} shoud point to the `docs/` folder:
 ifndef::root[]
 :root: ../
 endif::[]
@@ -6,11 +6,19 @@ endif::[]
 ifndef::init[]
 include::{root}_init.adoc[]
 endif::[]
+// init {imgs} in case of standalone display:
+ifndef::imgs[]
+:imgs: {root}imgs/
+endif::[]
 
 // ALIAS: lorem
 // ALIAS: finibus lorem
 
 == Lorem
+
+ifdef::isInternal[]
+*Internal Lorem Secret key*: `47203475`
+endif::[]
 
 Lorem diam sed, efficitur massa.
 {Ipsum} sed in risus rutrum.
@@ -35,6 +43,8 @@ Phasellus lacinia pellentesque odio ac facilisis <<lst-lorem-json>>.
 endif::[]
 Phasellus aliquam ullamcorper ligula porttitor ullamcorper.
 Vestibulum lorem leo, mattis quis ligula eget, vulputate dignissim magna.
+
+image::{imgs}tiles/lorem.png[Lorem tiles]
 
 [[lst-lorem-json]]
 [source, json]

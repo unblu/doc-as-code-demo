@@ -1,15 +1,25 @@
-// {root} shoud point to the `docs/` folder
+// {root} shoud point to the `docs/` folder:
 ifndef::root[]
 :root: ../
 endif::[]
+// init this page in case of standalone display:
 ifndef::init[]
 include::{root}_init.adoc[]
 endif::[]
+// init {imgs} in case of standalone display:
+ifndef::imgs[]
+:imgs: {root}imgs/
+endif::[]
+
 
 // ALIAS: ipsum
 
 //tag::description[]
 == Ipsum
+
+ifdef::isInternal[]
+*Internal Ipsum Secret key*: `17729473`
+endif::[]
 
 Ipsum sed in risus rutrum, commodo quam nec, viverra nulla.
 Curabitur porta tincidunt urna.
@@ -28,10 +38,12 @@ Etiam fermentum et purus sed interdum.
 
 image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]
 
-//end::description[]
-
 Phasellus aliquam ullamcorper ligula porttitor ullamcorper.
 Vestibulum lorem leo, mattis quis ligula eget, vulputate dignissim magna.
+
+image::{imgs}tiles/ipsum.png[Ipsum tiles]
+
+//end::description[]
 
 [[lst-ipsum-json]]
 [source, properties]
