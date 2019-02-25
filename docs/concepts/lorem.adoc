@@ -2,10 +2,12 @@
 ifndef::root[]
 :root: ../
 endif::[]
+
 // init this page in case of standalone display:
 ifndef::init[]
 include::{root}_init.adoc[]
 endif::[]
+
 // init {imgs} in case of standalone display:
 ifndef::imgs[]
 :imgs: {root}imgs/
