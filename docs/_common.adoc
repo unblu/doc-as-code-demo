@@ -14,8 +14,7 @@
 :source-highlighter: highlightjs
 :highlightjs-theme: github-gist
 
-//TODO: relying on the 'gradle-rootdir' is not the best solution (see https://github.com/unblu/doc-as-code-demo/issues/1)
 ifdef::gradle-rootdir[]
-:imgs: {gradle-rootdir}/html5/imgs/
-:highlightjsdir: {gradle-rootdir}/html5/highlight
+:imgs: {sourcedir}imgs/
+:highlightjsdir: {sourcedir}highlight
 endif::[]

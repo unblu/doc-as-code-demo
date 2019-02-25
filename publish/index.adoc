@@ -47,7 +47,6 @@ We currently support syntax highlighting for the following languages:
 
 If you want to add support for other languages, you can replace the bundle in `resource/highlight.min.js` with a new one from https://highlightjs.org/download/[highlightjs.org/download].
 
-See link:https://github.com/unblu/doc-as-code-demo/issues/1[Issue #1] for improvement in management of the `highlightjsdir` attribute.
 
 === File structure
 

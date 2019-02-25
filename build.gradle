@@ -31,18 +31,19 @@ asciidoctor {
             include '**/*.png'
         }
     }
-    attributes = ['revdate'           : buildDate(),
-                  'project-version'   : "$version",
-                  'source-highlighter': 'highlightjs',
-                  'highlightjs-theme' : 'github-gist',
-                  'imagesdir'         : '',
-                  'toc'               : 'left',
-                  'toclevels'         : '4',
-                  'icons'             : 'font',
-                  'sectanchors'       : 'true',
-                  'idprefix'          : '',
-                  'idseparator'       : '-',
-                  'docinfo1'          : 'true']
+    attributes = ['revdate'              : buildDate(),
+                  'project-version'      : "$version",
+                  'sourcedir-definition' : file(adocSources),
+                  'source-highlighter'   : 'highlightjs',
+                  'highlightjs-theme'    : 'github-gist',
+                  'imagesdir'            : '',
+                  'toc'                  : 'left',
+                  'toclevels'            : '4',
+                  'icons'                : 'font',
+                  'sectanchors'          : 'true',
+                  'idprefix'             : '',
+                  'idseparator'          : '-',
+                  'docinfo1'             : 'true']
 
     repositories {
         mavenCentral()
@@ -50,6 +51,7 @@ asciidoctor {
     dependencies {
         asciidoctor 'org.asciidoctor:asciidoctorj-diagram:1.5.12'
         asciidoctor 'fr.jmini.asciidoctorj:git-link:3.1.0'
+        asciidoctor 'fr.jmini.asciidoctorj:sourcedir:1.1.0'
     }
 }
 
