@@ -1,4 +1,4 @@
-// {root} shoud point to the `docs/` folder:
+// {root} must point to the `docs/` folder:
 ifndef::root[]
 :root: ../
 endif::[]
@@ -13,7 +13,7 @@ ifndef::imgs[]
 :imgs: {root}imgs/
 endif::[]
 
-// ALIAS: ipsum
+//ALIAS: ipsum
 
 //tag::description[]
 == Ipsum
