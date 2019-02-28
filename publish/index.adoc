@@ -93,10 +93,10 @@ image::{root}svg/ipsum.svg[Ipsum,300,opts=inline]
 
 ==== imgs attribute
 
-The `{imgs}` is similar to the `{root}` attribute for the git-link:docs/imgs[`docs/imgs/`] folder.
+The `+{imgs}+` is similar to the `+{root}+` attribute for the git-link:docs/imgs[`docs/imgs/`] folder.
 Its value depends of the context:
 
-* When previewing an adoc file (also called "standalone" display) (then it is `{root}/imgs`). This is also the case for the rendering made by GitHub.
+* When previewing an adoc file (also called "standalone" display) (then it is `+{root}/imgs+`). This is also the case for the rendering made by GitHub.
 * When generating the html output (the content of `docs` output folder using `-Pdocs` or the normal `guides` output folder), then its value depends of the location of the file (`docfile`) beeing processed, relative to `sourceDir`. This is because in the resulting html document, the `src` attribute of the `<img>` tag is not the one in the source folder git-link:docs/[`docs/`] but a copy of the image that will be present in the output folder.
 
 It must be used for images (`png`, `gif`, `jpeg` ...):

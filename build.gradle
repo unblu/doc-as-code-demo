@@ -34,6 +34,7 @@ asciidoctor {
     attributes = ['revdate'              : buildDate(),
                   'project-version'      : "$version",
                   'sourcedir-definition' : file(adocSources),
+                  'attribute-missing'    : 'warn',
                   'source-highlighter'   : 'highlightjs',
                   'highlightjs-theme'    : 'github-gist',
                   'imagesdir'            : '',
