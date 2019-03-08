@@ -1,3 +1,14 @@
+buildscript {
+    dependencies {
+        classpath "fr.jmini.asciidoctorj:docascode-helper:1.0.0"
+    }
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
 plugins {
     id 'org.asciidoctor.convert' version '1.5.10'
     id 'org.ajoberstar.git-publish' version '2.0.0'
@@ -20,7 +31,27 @@ asciidoctorj {
 def adocSources = project.hasProperty("docs") ? 'docs' : 'publish'
 def adocOutput = project.hasProperty("docs") ? 'build/docs' : 'build/guides'
 
+import fr.jmini.asciidoctorj.docascode.helper.*
+
+task docAsCodeHelper {
+    doLast {        
+        def docsPath = file('docs').toPath()
+
+        def inputs = [
+            new InitInput(docsPath.resolve("_init.adoc"), InitInput.Mode.LINK),
+            new InitInput(docsPath.resolve("_initText.adoc"), InitInput.Mode.TEXT),
+            //TODO: add publish/_init-complete-guide.adoc
+            //TODO: add publish/internal/lorem-ipsum-internal.adoc
+            new InitInput(file('publish/_init-overview-guide.adoc').toPath(), InitInput.Mode.TEXT)
+        ]
+        DocAsCodeHelper.updateInitFiles(docsPath, inputs);
+
+        DocAsCodeHelper.sanitizeHeaderInFiles(docsPath);
+    }
+}
+
 asciidoctor {
+    dependsOn docAsCodeHelper
     sourceDir = file(adocSources)
     outputDir = file(adocOutput)
     backends = ['html5']
