@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath "fr.jmini.asciidoctorj:docascode-helper:1.0.2"
+        classpath "fr.jmini.asciidoctorj:docascode-helper:1.0.3"
     }
 
     repositories {
